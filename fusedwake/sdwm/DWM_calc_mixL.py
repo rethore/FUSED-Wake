@@ -135,7 +135,7 @@ def DWM_init_calc_mixl(meta,mfor):
 
 
 def DWM_calc_wake_width(mfor,width,meta,j):
-    """Function that estimate the wake width
+    """Function that estimates the wake width.
 
         Parameters
         ----------
@@ -174,7 +174,7 @@ def DWM_calc_wake_width(mfor,width,meta,j):
     return width
 
 def DWM_eddy_viscosity(mfor,meta,width,visc_wake,visc_wake1,visc_wake2,F1_vector,F2_vector,u_star_DEF,l_star_DEF,One_div_du_dr_DWM,j):
-    """Function that calculate the eddy viscosity
+    """Function that calculates the eddy viscosity
 
     Parameters
     ----------
@@ -348,9 +348,9 @@ def DWM_velocity_solver(mfor,meta,j):
     return HL, mat
 
 def DWM_calc_mixL(meta, aero, mfor):
-    """ Main Ainslie - mixing length (Keck et al) function that compute the wake defcit as function of downstream distance in the meandering frame of reference
+    """ Main Ainslie - mixing length [Keck_2011]_ function that computes the wake deficit as function of downstream distance in the meandering frame of reference
 
-    (1) Solve the momentum equation for the streamwise velocity component at all radial positions explicitly, by using the value of the radial velocity component and the eddy viscosity from the previous location upstream. This yields a tri- diagonal equation system where all the coefficients are known, which can easily be solved by any tridiagonal ma- trix algorithm.
+    (1) Solve the momentum equation for the streamwise velocity component at all radial positions explicitly, by using the value of the radial velocity component and the eddy viscosity from the previous location upstream. This yields a tri- diagonal equation system where all the coefficients are known, which can easily be solved by any tridiagonal matrix algorithm.
     (2) Once the streamwise velocity is known, the radial velocity for all radial positions can be updated using the continuity equation
     (3) The eddy viscosity for all radial positions is updated using Eq. (3) in [Keck_2011]_
     (4) March to the next downstream location and repeat steps 1-3
